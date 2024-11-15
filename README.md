@@ -37,8 +37,7 @@ _Infomaniak provider for octoDNS_
 
 ## 🪐 Usage
 
-### Classic
-Install the package `pip install `
+Install the package `pip install octodns-infomaniak`
 
 
 
@@ -52,7 +51,7 @@ Install the package `pip install `
 ### Classic
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
-Install python and setup dependencies with `uv sync`.
+Install python and setup dependencies with `uv sync --all-extras`.
 ### Run linter and formatter
 ```
 uv run ruff format . 
