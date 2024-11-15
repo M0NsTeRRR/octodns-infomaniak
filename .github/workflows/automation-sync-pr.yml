@@ -1,5 +1,5 @@
 # THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
-name: Create pull request for automation-sync
+name: create pull request for automation-sync
 on:
   push:
     branches:
