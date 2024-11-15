@@ -10,11 +10,11 @@ end_of_line = lf
 indent_style = space
 insert_final_newline = true
 
+# JSON
 [*.json]
 indent_size = 2
 insert_final_newline = ignore
 
 # YAML
-# http://yaml.org/spec/1.2/2009-07-21/spec.html#id2576668
 [*.{yaml,yml}]
 indent_size = 2
