@@ -18,8 +18,8 @@ _Infomaniak provider for octoDNS_
 <div align="center">
 
 
-[![Pypi](https://img.shields.io/pypi/v/octodns-infomaniak?label=&logo=pypi&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/octodns-infomaniak)
-[![Python](https://img.shields.io/pypi/pyversions/octodns-infomaniak?label=&logo=python&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/octodns-infomaniak)
+[![Pypi](https://img.shields.io/pypi/v/octodns-infomaniak?label=&logo=pypi&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/)
+[![Python](https://img.shields.io/pypi/pyversions/octodns-infomaniak?label=&logo=python&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/)
 
 </div>
 
@@ -38,7 +38,7 @@ _Infomaniak provider for octoDNS_
 ## 🪐 Usage
 
 ### Classic
-Install the package `pip install octodns-infomaniak` and run it with `python3 -m octodns-infomaniak`
+Install the package `pip install `
 
 
 
@@ -53,16 +53,14 @@ Install the package `pip install octodns-infomaniak` and run it with `python3 -m
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 Install python and setup dependencies with `uv sync`.
-
-### Run unit test
-```
-uv run pytest --cov
-```
-
-### Run ruff
+### Run linter and formatter
 ```
 uv run ruff format . 
 uv run ruff check .
+```
+### Run unit test
+```
+uv run pytest --cov
 ```
 
 
