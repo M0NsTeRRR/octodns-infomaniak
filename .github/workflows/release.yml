@@ -8,24 +8,25 @@ permissions:
   contents: write
 jobs:
 
-changelog:
-  name: Generate changelog
-  runs-on: ubuntu-latest
-  outputs:
-    release_body: ${{ steps.git-cliff.outputs.content }}
-  steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Generate a changelog
-      id: git-cliff
-      uses: orhun/git-cliff-action@v4
-      with:
-        config: .github/cliff.toml
-        args: -vv --current
-      env:
-        OUTPUT: CHANGELOG.md
-        GITHUB_REPO: ${{ github.repository }}
+
+  changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    outputs:
+      release_body: ${{ steps.git-cliff.outputs.content }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate a changelog
+        id: git-cliff
+        uses: orhun/git-cliff-action@v4
+        with:
+          config: .github/cliff.toml
+          args: -vv --current
+        env:
+          OUTPUT: CHANGELOG.md
+          GITHUB_REPO: ${{ github.repository }}
   create_draft_release:
     name: Create release as draft
     runs-on: ubuntu-latest
