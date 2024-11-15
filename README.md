@@ -41,6 +41,7 @@ _Infomaniak provider for octoDNS_
 ### Devcontainer
 [Documentation](https://code.visualstudio.com/docs/devcontainers/containers)
 
+True
 
 
 
