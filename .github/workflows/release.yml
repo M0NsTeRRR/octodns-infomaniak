@@ -9,6 +9,7 @@ permissions:
   id-token: write
 jobs:
 
+
 changelog:
   name: Generate changelog
   runs-on: ubuntu-latest
