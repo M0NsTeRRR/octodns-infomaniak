@@ -31,7 +31,7 @@ _Infomaniak provider for octoDNS_
   - [License](#balance_scale-license)
 
 
-##🪐 Usage
+## 🪐 Usage
 
 
 
