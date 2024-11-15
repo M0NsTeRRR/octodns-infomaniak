@@ -1,5 +1,5 @@
 # THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
-name: Lint PR
+name: lint PR
 on:
   pull_request_target:
     types:
