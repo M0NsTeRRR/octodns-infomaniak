@@ -37,18 +37,13 @@ _Infomaniak provider for octoDNS_
 
 ## 🪐 Usage
 
-Install the package `pip install octodns-infomaniak`
+Install the package `pip install octodns-infomaniak`.
 
 
 
 
 ## 🛠️ Dev
 
-### Devcontainer
-[Documentation](https://code.visualstudio.com/docs/devcontainers/containers)
-
-
-### Classic
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
 Install python and setup dependencies with `uv sync --all-extras`.
@@ -61,6 +56,10 @@ uv run ruff check .
 ```
 uv run pytest --cov
 ```
+
+
+### Devcontainer
+[Documentation](https://code.visualstudio.com/docs/devcontainers/containers)
 
 
 
