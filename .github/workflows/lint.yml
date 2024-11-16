@@ -9,20 +9,16 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version:
-          - "3.9"
-          - "3.10"
-          - "3.11"
-          - "3.12"
-          - "3.13"
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
       - name: Install uv
         uses: astral-sh/setup-uv@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        run: uv python install ${{ matrix.python-version }}
+      - name: Set up Python
+          uses: actions/setup-python@v5
+          with:
+            python-version-file: ".python-version"
       - name: Install the project
         run: uv sync --all-extras
       - name: Run ruff format
