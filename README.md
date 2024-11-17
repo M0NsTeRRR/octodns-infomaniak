@@ -27,12 +27,12 @@ _Infomaniak provider for octoDNS_
 
 
   - [Usage](#-usage)
-  - [Dev](#-dev)
+  - [Dev](#%EF%B8%8F-dev)
 
-  - [Support &amp; Assistance](#-support--assistance)
+  - [Support &amp; Assistance](#%EF%B8%8F-support--assistance)
   - [Contributing](#-contributing)
-  - [Security](#-security)
-  - [License](#-license)
+  - [Security](#%EF%B8%8F-security)
+  - [License](#%EF%B8%8F-license)
 
 
 ## 🪐 Usage
