@@ -9,6 +9,7 @@ on:
       - reopened
 permissions:
   pull-requests: read
+  statuses: write
 jobs:
   lint_pr:
     name: Validate PR title
