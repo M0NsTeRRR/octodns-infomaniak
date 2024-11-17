@@ -5,6 +5,7 @@ on:
     branches:
       - automation-sync
 permissions:
+  contents: read
   pull-requests: write
   checks: write
 jobs:
