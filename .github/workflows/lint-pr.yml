@@ -1,7 +1,7 @@
 # THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
 name: validate PR title
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - edited
