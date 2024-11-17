@@ -32,7 +32,7 @@ jobs:
     needs: [changelog]
     steps:
       - name: Create release as draft
-        run: gh release create  ${{ github.ref_name  }}-n  ${{ needs.changelog.outputs.release_body  }} --draft
+        run: gh release create  ${{ github.ref_name  }} -n  ${{ needs.changelog.outputs.release_body  }} --draft
         env:
           GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN  }}
   package:
