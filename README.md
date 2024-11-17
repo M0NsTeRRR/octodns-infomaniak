@@ -8,19 +8,11 @@
 _Infomaniak provider for octoDNS_
 
 </div>
-<div align="center">
-
-
-[![Lint](https://img.shields.io/github/actions/workflow/status/m0nsterrr/octodns-infomaniak/lint.yml?branch=main&label=&logo=ruff&style=for-the-badge&logoColor=D7FF64&color=black)](https://github.com/m0nsterrr/octodns-infomaniak/tree/main/.github/workflows/lint.yml)
-[![Test](https://img.shields.io/github/actions/workflow/status/m0nsterrr/octodns-infomaniak/test.yml?branch=main&label=&logo=pytest&style=for-the-badge&logoColor=white&color=0A9EDC)](https://github.com/m0nsterrr/octodns-infomaniak/tree/main/.github/workflows/test.yml)
-[![Release](https://img.shields.io/github/actions/workflow/status/m0nsterrr/octodns-infomaniak/release.yml?branch=main&label=&logo=github&style=for-the-badge&logoColor=black&color=white)](https://github.com/m0nsterrr/octodns-infomaniak/tree/main/.github/workflows/release.yml)
-</div>
 
 <div align="center">
 
-
-[![Pypi](https://img.shields.io/pypi/v/octodns-infomaniak?label=&logo=pypi&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/)
-[![Python](https://img.shields.io/pypi/pyversions/octodns-infomaniak?label=&logo=python&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/)
+[![Pypi](https://img.shields.io/pypi/v/octodns-infomaniak?label=&logo=pypi&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/octodns-infomaniak)
+[![Python](https://img.shields.io/pypi/pyversions/octodns-infomaniak?label=&logo=python&style=for-the-badge&logoColor=yellow&color=3776AB)](https://pypi.python.org/pypi/octodns-infomaniak)
 
 </div>
 <!-- template:end:header -->
@@ -30,7 +22,6 @@ _Infomaniak provider for octoDNS_
 ## 🔗 Table of Contents
   - [Usage](#-usage)
   - [Dev](#%EF%B8%8F-dev)
-
   - [Support &amp; Assistance](#%EF%B8%8F-support--assistance)
   - [Contributing](#-contributing)
   - [Security](#%EF%B8%8F-security)
