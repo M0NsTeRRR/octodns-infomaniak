@@ -1,0 +1,45 @@
+{
+    "result": "success",
+    "data": [
+        {
+            "id": 22429078,
+            "source": ".",
+            "type": "NS",
+            "ttl": 3600,
+            "target": "ns1.example.test",
+            "updated_at": 1731760460,
+            "is_for_redirection": false
+        },
+        {
+            "id": 22429079,
+            "source": ".",
+            "type": "NS",
+            "ttl": 3600,
+            "target": "ns2.example.test",
+            "updated_at": 1731760460,
+            "is_for_redirection": false
+        },
+        {
+            "id": 22429080,
+            "source": "_imap",
+            "type": "SRV",
+            "ttl": 3600,
+            "target": "10 0 8000 test.example2.test.",
+            "updated_at": 1731764828,
+            "delegated_zone": {
+                "id": 665577,
+                "uri": "https://api.infomaniak.com/2/zones/_tcp.example2.test"
+            },
+            "is_for_redirection": false
+        },
+        {
+            "id": 22429081,
+            "source": "_dmarc",
+            "type": "TXT",
+            "ttl": 3600,
+            "target": "v=DMARC1; p=reject; aspf=s; adkim=s; rua=mailto:security@example.test; ruf=mailto:security@example.test;",
+            "updated_at": 1731764898,
+            "is_for_redirection": false
+        }
+    ]
+}

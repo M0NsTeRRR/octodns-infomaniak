@@ -1,0 +1,49 @@
+[project]
+name = "octodns-infomaniak"
+version = "0.0.0"
+description = " Infomaniak provider for octoDNS "
+readme = "README.md"
+authors = [
+    {name = "Ludovic Ortega", email = "ludovic.ortega@adminafk.fr"}
+]
+keywords = ["dns", "octodns", "infomaniak"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)",
+    "Topic :: Utilities",
+]
+
+requires-python = ">=3.9,<4.0.0"
+dependencies = [
+    "octodns>=1.10.0,<2.0.0",
+    "requests>=2.32.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/M0NsTeRRR/octodns-infomaniak"
+Repository = "https://github.com/M0NsTeRRR/octodns-infomaniak"
+Issues = "https://github.com/M0NsTeRRR/octodns-infomaniak/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest~=8.3.3",
+    "pytest-cov~=6.0.0",
+    "responses~=0.25.3",
+    "ruff~=0.7.4"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/octodns_infomaniak"]

@@ -1,0 +1,30 @@
+# THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
+name: python test
+on:
+  - pull_request
+permissions:
+  contents: read
+  pull-requests: read
+  checks: write
+jobs: 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+          - "3.9"
+          - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+      - name: Install the project
+        run: uv sync --all-extras
+      - name: Run tests
+        run: uv run pytest --cov
