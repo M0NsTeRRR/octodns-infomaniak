@@ -26,13 +26,13 @@ _Infomaniak provider for octoDNS_
 ## 🔗 Table of Contents
 
 
-  - [Usage](#ringed_planet)
-  - [Dev](#tools)
+  - [Usage](#-usage)
+  - [Dev](#-dev)
 
-  - [Support &amp; Assistance](#raising_hand_man-support--assistance)
-  - [Contributing](#handshake-contributing)
-  - [Security](#shield-security)
-  - [License](#balance_scale-license)
+  - [Support &amp; Assistance](#-support--assistance)
+  - [Contributing](#-contributing)
+  - [Security](#-security)
+  - [License](#-license)
 
 
 ## 🪐 Usage
