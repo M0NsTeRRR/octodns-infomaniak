@@ -57,7 +57,7 @@ jobs:
   publish_release:
     name: Publish release
     runs-on: ubuntu-latest
-    needs: [create_draft_release, changelog, package]
+    needs: [changelog, create_draft_release, package]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
