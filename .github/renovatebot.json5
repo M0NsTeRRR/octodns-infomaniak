@@ -18,6 +18,7 @@
   },
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "onboarding": false,
   "rebaseWhen": "conflicted",
   "labels": [
     "dependencies",
