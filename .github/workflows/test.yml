@@ -1,4 +1,6 @@
+---
 # THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: python test
 on:
   - pull_request

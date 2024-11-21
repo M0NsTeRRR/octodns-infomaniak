@@ -1,4 +1,6 @@
+---
 # THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: python release
 on:
   push:
@@ -34,7 +36,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Create release as draft
-        run: gh release create  ${{ github.ref_name  }} -n "${{ needs.changelog.outputs.release_body  }}" --draft
+        run: gh release create ${{ github.ref_name }} -n "${{ needs.changelog.outputs.release_body }}" --draft
         env:
           GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN  }}
   package:
