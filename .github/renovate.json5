@@ -10,8 +10,9 @@
     ":dependencyDashboard",
     ":semanticCommits",
     ":timezone(Europe/Paris)",
-    "github>//.github/renovate/labels.json5",
-    "github>//.github/renovate/semantic_commits.json5",
+    "github>M0NsTeRRR/octodns-infomaniak//.github/renovate/labels.json5",
+    "github>M0NsTeRRR/octodns-infomaniak//.github/renovate/semantic_commits.json5",
+    "github>M0NsTeRRR/octodns-infomaniak//.github/renovate/devcontainers.json5",
   ],
   "lockFileMaintenance": {
     "enabled": true,
