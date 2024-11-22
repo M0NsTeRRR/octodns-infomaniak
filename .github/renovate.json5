@@ -12,6 +12,7 @@
     ":timezone(Europe/Paris)",
     "github>//.github/renovate/labels.json5",
     "github>//.github/renovate/semantic_commits.json5",
+    "github>//.github/renovate/devcontainers.json5",
   ],
   "lockFileMaintenance": {
     "enabled": true,
