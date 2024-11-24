@@ -1,7 +1,7 @@
 [project]
 name = "octodns-infomaniak"
 version = "0.0.0"
-description = " Infomaniak provider for octoDNS "
+description = "Infomaniak provider for octoDNS"
 readme = "README.md"
 authors = [
     {name = "Ludovic Ortega", email = "ludovic.ortega@adminafk.fr"}
@@ -29,7 +29,7 @@ dependencies = [
 Homepage = "https://github.com/M0NsTeRRR/octodns-infomaniak"
 Repository = "https://github.com/M0NsTeRRR/octodns-infomaniak"
 Issues = "https://github.com/M0NsTeRRR/octodns-infomaniak/issues"
-Funding = 'https://ko-fi.com/ludovicortega'
+Funding = "https://ko-fi.com/ludovicortega"
 
 [project.optional-dependencies]
 dev = [
