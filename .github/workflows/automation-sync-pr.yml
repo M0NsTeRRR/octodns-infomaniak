@@ -6,14 +6,14 @@ on:
   push:
     branches:
       - automation-sync
-permissions:
-  contents: read
-  pull-requests: write
-  checks: write
+permissions: {}
 jobs:
   create-pull-request:
     name: Create Pull Request
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
