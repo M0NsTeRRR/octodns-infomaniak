@@ -5,24 +5,24 @@
       "matchDatasources": ["pypi"],
       "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "feat(python)!: ",
-      "commitMessageTopic": "",
-      "commitMessageExtra": "(  →  )"
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
     },
     {
       "matchDatasources": ["pypi"],
       "matchUpdateTypes": ["minor"],
       "semanticCommitType": "feat",
       "semanticCommitScope": "python",
-      "commitMessageTopic": "",
-      "commitMessageExtra": "(  →  )"
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
     },
     {
       "matchDatasources": ["pypi"],
       "matchUpdateTypes": ["patch"],
       "semanticCommitType": "fix",
       "semanticCommitScope": "python",
-      "commitMessageTopic": "",
-      "commitMessageExtra": "(  →  )"
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
     },
   ]
 }
