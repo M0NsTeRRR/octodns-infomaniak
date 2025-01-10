@@ -25,7 +25,7 @@ def test_http_error():
 
     # 400
     with responses.RequestsMock() as mock:
-        mock.get(f'{BASE_API_URL}zones/{zone_name.rstrip(".")}/records', status=400)
+        mock.get(f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records", status=400)
 
         with pytest.raises(InfomaniakClientBadRequest):
             zone = Zone(zone_name, [])
@@ -33,7 +33,7 @@ def test_http_error():
 
     # 401
     with responses.RequestsMock() as mock:
-        mock.get(f'{BASE_API_URL}zones/{zone_name.rstrip(".")}/records', status=401)
+        mock.get(f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records", status=401)
 
         with pytest.raises(InfomaniakClientUnauthorized):
             zone = Zone(zone_name, [])
@@ -41,7 +41,7 @@ def test_http_error():
 
     # 403
     with responses.RequestsMock() as mock:
-        mock.get(f'{BASE_API_URL}zones/{zone_name.rstrip(".")}/records', status=403)
+        mock.get(f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records", status=403)
 
         with pytest.raises(InfomaniakClientForbidden):
             zone = Zone(zone_name, [])
@@ -49,7 +49,7 @@ def test_http_error():
 
     # 404
     with responses.RequestsMock() as mock:
-        mock.get(f'{BASE_API_URL}zones/{zone_name.rstrip(".")}/records', status=404)
+        mock.get(f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records", status=404)
 
         with pytest.raises(InfomaniakClientNotFound):
             zone = Zone(zone_name, [])
@@ -63,11 +63,11 @@ def test_populate_empty_zone():
     with responses.RequestsMock() as mock:
         with open("tests/fixtures/empty_example.test.json") as f:
             mock.get(
-                f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records",
+                f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records",
                 status=200,
                 headers={
                     "Authorization": f"Bearer {TOKEN}",
-                    "User-Agent": f'octodns/{version("octodns")} octodns-infomaniak/{version("octodns-infomaniak")}',
+                    "User-Agent": f"octodns/{version('octodns')} octodns-infomaniak/{version('octodns-infomaniak')}",
                 },
                 json=json.loads(f.read()),
             )
@@ -245,7 +245,7 @@ def test_populate_zone():
     with responses.RequestsMock() as mock:
         with open("tests/fixtures/get_example.test.json") as f:
             mock.get(
-                f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records",
+                f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records",
                 status=200,
                 json=json.loads(f.read()),
             )
@@ -423,7 +423,7 @@ def test_apply_full_zone():
     with responses.RequestsMock() as mock:
         with open("tests/fixtures/empty_example.test.json") as f:
             mock.get(
-                f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records",
+                f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records",
                 status=200,
                 json=json.loads(f.read()),
             )
@@ -432,7 +432,7 @@ def test_apply_full_zone():
             datas = json.loads(f.read())
             for data in datas:
                 mock.post(
-                    f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records",
+                    f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records",
                     status=201,
                     match=[matchers.json_params_matcher(data)],
                     json={},
@@ -488,7 +488,7 @@ def test_apply_update_zone():
     with responses.RequestsMock() as mock:
         with open("tests/fixtures/get_example2.test.json") as f:
             mock.get(
-                f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records",
+                f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records",
                 status=200,
                 json=json.loads(f.read()),
             )
@@ -497,7 +497,7 @@ def test_apply_update_zone():
             datas = json.loads(f.read())
             for data in datas:
                 mock.post(
-                    f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records",
+                    f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records",
                     status=201,
                     match=[matchers.json_params_matcher(data)],
                     json={},
@@ -507,7 +507,7 @@ def test_apply_update_zone():
             datas = json.loads(f.read())
             for data in datas:
                 mock.delete(
-                    f"{BASE_API_URL}zones/{zone_name.rstrip(".")}/records/{data}",
+                    f"{BASE_API_URL}zones/{zone_name.rstrip('.')}/records/{data}",
                     status=200,
                     json={},
                 )

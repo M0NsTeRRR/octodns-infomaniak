@@ -47,7 +47,7 @@ class InfomaniakClient(object):
         session.headers.update(
             {
                 "Authorization": f"Bearer {token}",
-                "User-Agent": f'octodns/{version("octodns")} octodns-infomaniak/{version(__package__)}',
+                "User-Agent": f"octodns/{version('octodns')} octodns-infomaniak/{version(__package__)}",
             }
         )
         self._session = session
