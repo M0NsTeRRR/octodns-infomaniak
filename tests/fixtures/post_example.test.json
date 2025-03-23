@@ -1,104 +1,104 @@
 [
-    {
-        "source": ".",
-        "type": "NS",
-        "ttl": 3600,
-        "target": "ns1.example2.test."
-    },
-    {
-        "source": ".",
-        "type": "NS",
-        "ttl": 3600,
-        "target": "ns2.example2.test."
-    },
-    {
-        "source": "test",
-        "type": "A",
-        "ttl": 3600,
-        "target": "192.0.2.1"
-    },
-    {
-        "source": "test",
-        "type": "AAAA",
-        "ttl": 300,
-        "target": "2001:db8::3"
-    },
-    {
-        "source": ".",
-        "type": "CAA",
-        "ttl": 3600,
-        "target": "0 issue \"sectigo.com\""
-    },
-    {
-        "source": ".",
-        "type": "CAA",
-        "ttl": 3600,
-        "target": "1 issuewild \"letsencrypt.org\""
-    },
-    {
-        "source": ".",
-        "type": "CAA",
-        "ttl": 3600,
-        "target": "2 iodef \"mailto:security@example.test\""
-    },
-    {
-        "source": "test",
-        "type": "A",
-        "ttl": 3600,
-        "target": "192.0.2.4"
-    },
-    {
-        "source": "test",
-        "type": "AAAA",
-        "ttl": 300,
-        "target": "2001:db8::7"
-    },
-    {
-        "source": "test2",
-        "type": "CNAME",
-        "ttl": 3600,
-        "target": "test.example.test."
-    },
-    {
-        "source": "test",
-        "type": "DS",
-        "ttl": 3600,
-        "target": "2371 15 1 23711321F987CC6583E92DF0890718C42"
-    },
-    {
-        "source": "mail",
-        "type": "MX",
-        "ttl": 3600,
-        "target": "10 mail.example.test."
-    },
-    {
-        "source": "test6",
-        "type": "NS",
-        "ttl": 3600,
-        "target": "test.example.test."
-    },
-    {
-        "source": "_imap._tcp",
-        "type": "SRV",
-        "ttl": 3600,
-        "target": "10 0 8000 test.example.test."
-    },
-    {
-        "source": "test",
-        "type": "SSHFP",
-        "ttl": 3600,
-        "target": "4 2 A9759105BF5A6BDE1555CF2D30E2049B3E63DC81C899DC5C1DEC28CD02A9E88F"
-    },
-    {
-        "source": "_dmarc",
-        "type": "TXT",
-        "ttl": 3600,
-        "target": "v=DMARC1; p=reject; aspf=s; adkim=s; rua=mailto:security@example.test; ruf=mailto:security@example.test;"
-    },
-    {
-        "source": "test",
-        "type": "TLSA",
-        "ttl": 3600,
-        "target": "0 0 1 2B8C10F47DE35F59C834305E5DFDB6C549DA57A79DF470728B3A67CAB99256C1"
-    }
+  {
+    "source": ".",
+    "type": "NS",
+    "ttl": 3600,
+    "target": "ns1.example2.test."
+  },
+  {
+    "source": ".",
+    "type": "NS",
+    "ttl": 3600,
+    "target": "ns2.example2.test."
+  },
+  {
+    "source": "test",
+    "type": "A",
+    "ttl": 3600,
+    "target": "192.0.2.1"
+  },
+  {
+    "source": "test",
+    "type": "AAAA",
+    "ttl": 300,
+    "target": "2001:db8::3"
+  },
+  {
+    "source": ".",
+    "type": "CAA",
+    "ttl": 3600,
+    "target": "0 issue \"sectigo.com\""
+  },
+  {
+    "source": ".",
+    "type": "CAA",
+    "ttl": 3600,
+    "target": "1 issuewild \"letsencrypt.org\""
+  },
+  {
+    "source": ".",
+    "type": "CAA",
+    "ttl": 3600,
+    "target": "2 iodef \"mailto:security@example.test\""
+  },
+  {
+    "source": "test",
+    "type": "A",
+    "ttl": 3600,
+    "target": "192.0.2.4"
+  },
+  {
+    "source": "test",
+    "type": "AAAA",
+    "ttl": 300,
+    "target": "2001:db8::7"
+  },
+  {
+    "source": "test2",
+    "type": "CNAME",
+    "ttl": 3600,
+    "target": "test.example.test."
+  },
+  {
+    "source": "test",
+    "type": "DS",
+    "ttl": 3600,
+    "target": "2371 15 1 23711321F987CC6583E92DF0890718C42"
+  },
+  {
+    "source": "mail",
+    "type": "MX",
+    "ttl": 3600,
+    "target": "10 mail.example.test."
+  },
+  {
+    "source": "test6",
+    "type": "NS",
+    "ttl": 3600,
+    "target": "test.example.test."
+  },
+  {
+    "source": "_imap._tcp",
+    "type": "SRV",
+    "ttl": 3600,
+    "target": "10 0 8000 test.example.test."
+  },
+  {
+    "source": "test",
+    "type": "SSHFP",
+    "ttl": 3600,
+    "target": "4 2 A9759105BF5A6BDE1555CF2D30E2049B3E63DC81C899DC5C1DEC28CD02A9E88F"
+  },
+  {
+    "source": "_dmarc",
+    "type": "TXT",
+    "ttl": 3600,
+    "target": "v=DMARC1; p=reject; aspf=s; adkim=s; rua=mailto:security@example.test; ruf=mailto:security@example.test;"
+  },
+  {
+    "source": "test",
+    "type": "TLSA",
+    "ttl": 3600,
+    "target": "0 0 1 2B8C10F47DE35F59C834305E5DFDB6C549DA57A79DF470728B3A67CAB99256C1"
+  }
 ]
