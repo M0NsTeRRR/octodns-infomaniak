@@ -6,6 +6,7 @@
     "replacements:k8s-registry-move",
     ":automergePr",
     ":automergePatch",
+    ":automergeDigest",
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
@@ -14,9 +15,6 @@
     "github>m0nsterrr/octodns-infomaniak//.github/renovate/semantic_commits.json5",
     "github>m0nsterrr/octodns-infomaniak//.github/renovate/devcontainers.json5",
   ],
-  "lockFileMaintenance": {
-    "enabled": true,
-  },
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
