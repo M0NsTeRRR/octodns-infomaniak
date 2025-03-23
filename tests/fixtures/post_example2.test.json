@@ -1,26 +1,26 @@
 [
-    {
-        "source": ".",
-        "type": "NS",
-        "ttl": 3600,
-        "target": "ns1.example2.test."
-    },
-    {
-        "source": ".",
-        "type": "NS",
-        "ttl": 3600,
-        "target": "ns3.example2.test."
-    },
-    {
-        "source": "_imap._tcp",
-        "type": "SRV",
-        "ttl": 3600,
-        "target": "10 0 8001 test.example2.test."
-    },
-    {
-        "source": "test",
-        "type": "A",
-        "ttl": 3600,
-        "target": "192.0.2.1"
-    }
+  {
+    "source": ".",
+    "type": "NS",
+    "ttl": 3600,
+    "target": "ns1.example2.test."
+  },
+  {
+    "source": ".",
+    "type": "NS",
+    "ttl": 3600,
+    "target": "ns3.example2.test."
+  },
+  {
+    "source": "_imap._tcp",
+    "type": "SRV",
+    "ttl": 3600,
+    "target": "10 0 8001 test.example2.test."
+  },
+  {
+    "source": "test",
+    "type": "A",
+    "ttl": 3600,
+    "target": "192.0.2.1"
+  }
 ]
