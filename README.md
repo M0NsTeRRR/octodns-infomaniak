@@ -18,7 +18,7 @@ _Infomaniak provider for octoDNS_
 
 <div align="center">
 
-[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/m0nsterrr/octodns-infomaniak?label=openssf scorecard&style=for-the-badge)](ttps://scorecard.dev/viewer/?uri=github.com/m0nsterrr/octodns-infomaniak)
+[![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/m0nsterrr/octodns-infomaniak?label=openssf scorecard&style=for-the-badge)](https://scorecard.dev/viewer/?uri=github.com/m0nsterrr/octodns-infomaniak)
 
 </div>
 <!-- template:end:header -->
