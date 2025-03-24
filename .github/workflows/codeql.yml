@@ -1,0 +1,46 @@
+---
+# THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: CodeQL
+on:
+  schedule:
+    - cron: '34 7 * * 5'
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+permissions: {}
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      packages: read # required to fetch internal or private CodeQL packs
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - language: actions
+          build-mode: none
+        - language: python
+          build-mode: nonesteps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@5f8171a638ada777af81d42b55959a643bb29017 # v3.28.12
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@5f8171a638ada777af81d42b55959a643bb29017 # v3.28.12
+        with:
+          category: "/language:${{ matrix.language }}"
