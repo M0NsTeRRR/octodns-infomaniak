@@ -4,6 +4,8 @@
 name: python release
 on:
   push:
+    branches:
+      - main
     tags:
       - '*'
 permissions: {}
@@ -45,9 +47,10 @@ jobs:
           persist-credentials: false
       
       - name: Create release as draft
-        run: gh release create ${{ github.ref_name }} -n "${{ needs.changelog.outputs.release_body }}" --draft
+        run: gh release create ${GITHUB_REF_NAME} -n "${RELEASE_BODY}" --draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_BODY: ${{ needs.changelog.outputs.release_body }}
 
   build-package:
     name: Build package
@@ -62,7 +65,9 @@ jobs:
    
       - name: Install uv
         uses: astral-sh/setup-uv@0c5e2b8115b80b4c7c5ddf6ffdd634974642d182 # v5.4.1
-    
+        with:
+          enable-cache: false
+
       - name: Set up Python
         uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
         with:
@@ -111,6 +116,6 @@ jobs:
           persist-credentials: false
       
       - name: Create release
-        run: gh release edit ${{ github.ref_name }} --draft=false
+        run: gh release edit ${GITHUB_REF_NAME} --draft=false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
