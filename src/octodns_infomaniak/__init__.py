@@ -1,4 +1,4 @@
-from typing import Any, List, Dict, Iterator
+from typing import Any, Iterator
 from importlib.metadata import version
 import logging
 from collections import defaultdict
@@ -42,7 +42,7 @@ class InfomaniakClientNotFound(InfomaniakClientException):
 
 
 class InfomaniakClient(object):
-    def __init__(self, token):
+    def __init__(self, token: str):
         session = Session()
         session.headers.update(
             {
@@ -53,7 +53,7 @@ class InfomaniakClient(object):
         self._session = session
         self.endpoint = BASE_API_URL
 
-    def _request(self, method, path, params=None, data=None) -> Any:
+    def _request(self, method: str, path: str, params=None, data=None) -> Any:
         url = f"{self.endpoint}{path}"
         r = self._session.request(method, url, params=params, json=data)
 
@@ -70,22 +70,21 @@ class InfomaniakClient(object):
 
         return r.json()
 
-    def get_records(self, zone) -> List[Dict[str, str]]:
+    def get_records(self, zone: str) -> list[dict[str, str]]:
         path = f"zones/{zone}/records"
         return self._request("GET", path)["data"]
 
-    def post_record(self, zone, data):
+    def post_record(self, zone: str, data):
         path = f"zones/{zone}/records"
         self._request("POST", path, data=data)
 
-    def delete_record(self, zone, record):
+    def delete_record(self, zone: str, record):
         path = f"zones/{zone}/records/{record}"
         self._request("DELETE", path)
 
 
 class InfomaniakProvider(BaseProvider):
     SUPPORTS_GEO = False
-    SUPPORTS_DYNAMIC = False
     SUPPORTS_ROOT_NS = True
     SUPPORTS_POOL_VALUE_STATUS = False
     SUPPORTS = set(
@@ -178,7 +177,7 @@ class InfomaniakProvider(BaseProvider):
 
         return exists
 
-    def zone_records(self, zone: Zone) -> List[Dict[str, Any]]:
+    def zone_records(self, zone: Zone) -> list[dict[str, Any]]:
         if zone.name not in self._zone_records:
             self._zone_records[zone.name] = self._client.get_records(
                 self._get_zone_without_trailling_dot(zone.name)
@@ -186,7 +185,9 @@ class InfomaniakProvider(BaseProvider):
 
         return self._zone_records[zone.name]
 
-    def _data_for_multiple(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_multiple(
+        self, _type: str, records: list[dict[str, Any]]
+    ) -> dict[str, Any]:
         return {
             "ttl": records[0]["ttl"],
             "type": _type,
@@ -197,7 +198,9 @@ class InfomaniakProvider(BaseProvider):
     _data_for_AAAA = _data_for_multiple
     _data_for_TXT = _data_for_multiple
 
-    def _data_for_CAA(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_CAA(
+        self, _type: str, records: dict[str, Any]
+    ) -> list[dict[str, Any]]:
         values = []
         for record in records:
             flags, tag, value = record["target"].split(" ", 2)
@@ -214,7 +217,7 @@ class InfomaniakProvider(BaseProvider):
             "value": self._get_fqdn(records[0]["target"]),
         }
 
-    def _data_for_DS(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_DS(self, _type: str, records: list[dict[str, Any]]) -> dict[str, Any]:
         values = []
         for record in records:
             key_tag, algorithm, digest_type, digest = record["target"].split(" ", 3)
@@ -229,7 +232,7 @@ class InfomaniakProvider(BaseProvider):
 
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
-    def _data_for_MX(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_MX(self, _type: str, records: list[dict[str, Any]]) -> dict[str, Any]:
         values = []
         for record in records:
             priority, exchange = record["target"].split(" ", 1)
@@ -242,14 +245,16 @@ class InfomaniakProvider(BaseProvider):
 
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
-    def _data_for_NS(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_NS(self, _type: str, records: list[dict[str, Any]]) -> dict[str, Any]:
         return {
             "ttl": records[0]["ttl"],
             "type": _type,
             "values": [self._get_fqdn(record["target"]) for record in records],
         }
 
-    def _data_for_SRV(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_SRV(
+        self, _type: str, records: list[dict[str, Any]]
+    ) -> dict[str, Any]:
         values = []
         for record in records:
             priority, weight, port, target = record["target"].split(" ", 3)
@@ -264,7 +269,9 @@ class InfomaniakProvider(BaseProvider):
 
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
-    def _data_for_SSHFP(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_SSHFP(
+        self, _type: str, records: list[dict[str, Any]]
+    ) -> dict[str, Any]:
         values = []
         for record in records:
             algorithm, fingerprint_type, fingerprint = record["target"].split(" ", 2)
@@ -278,7 +285,9 @@ class InfomaniakProvider(BaseProvider):
 
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
-    def _data_for_TLSA(self, _type: str, records: Dict[str, Any]) -> Dict[str, Any]:
+    def _data_for_TLSA(
+        self, _type: str, records: list[dict[str, Any]]
+    ) -> dict[str, Any]:
         values = []
         for record in records:
             certificate_usage, selector, matching_type, certificate_association_data = (
@@ -295,7 +304,7 @@ class InfomaniakProvider(BaseProvider):
 
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
-    def _params_for_multiple(self, record) -> Iterator[Dict[str, Any]]:
+    def _params_for_multiple(self, record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
@@ -309,7 +318,7 @@ class InfomaniakProvider(BaseProvider):
     _params_for_NS = _params_for_multiple
     _params_for_TXT = _params_for_multiple
 
-    def _params_for_CAA(self, record: Record) -> Iterator[Dict[str, Any]]:
+    def _params_for_CAA(self, record: Record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
@@ -318,7 +327,7 @@ class InfomaniakProvider(BaseProvider):
                 "type": record._type,
             }
 
-    def _params_for_CNAME(self, record: Record) -> Iterator[Dict[str, Any]]:
+    def _params_for_CNAME(self, record: Record) -> Iterator[dict[str, Any]]:
         yield {
             "source": self._get_record_name(record.name),
             "target": record.value,
@@ -326,7 +335,7 @@ class InfomaniakProvider(BaseProvider):
             "type": record._type,
         }
 
-    def _params_for_DS(self, record: Record) -> Iterator[Dict[str, Any]]:
+    def _params_for_DS(self, record: Record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
@@ -335,7 +344,7 @@ class InfomaniakProvider(BaseProvider):
                 "type": record._type,
             }
 
-    def _params_for_MX(self, record) -> Iterator[Dict[str, Any]]:
+    def _params_for_MX(self, record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
@@ -344,7 +353,7 @@ class InfomaniakProvider(BaseProvider):
                 "type": record._type,
             }
 
-    def _params_for_SRV(self, record: Record) -> Iterator[Dict[str, Any]]:
+    def _params_for_SRV(self, record: Record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
@@ -353,7 +362,7 @@ class InfomaniakProvider(BaseProvider):
                 "type": record._type,
             }
 
-    def _params_for_SSHFP(self, record: Record) -> Iterator[Dict[str, Any]]:
+    def _params_for_SSHFP(self, record: Record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
@@ -362,7 +371,7 @@ class InfomaniakProvider(BaseProvider):
                 "type": record._type,
             }
 
-    def _params_for_TLSA(self, record: Record) -> Iterator[Dict[str, Any]]:
+    def _params_for_TLSA(self, record: Record) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
                 "source": self._get_record_name(record.name),
