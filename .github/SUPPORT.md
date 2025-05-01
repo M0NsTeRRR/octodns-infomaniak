@@ -19,10 +19,10 @@ Here are some tips:
 * Search to find out if a similar question has been asked or if a similar
   issue/bug has been reported.
 * Try to define what you need help with:
-    * Is there something in particular you want to do?
-    * What problem are you encountering and what steps have you taken to try
+  * Is there something in particular you want to do?
+  * What problem are you encountering and what steps have you taken to try
         and fix it?
-    * Is there a concept you don't understand?
+  * Is there a concept you don't understand?
 * Provide sample code, such as a a simple snippet, if
   possible.
 * Screenshots can help, but if there's important text such as code or error
