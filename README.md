@@ -54,7 +54,7 @@ providers:
   infomaniak:
     class: octodns_infomaniak.InfomaniakProvider
     # The API Token or API Key.
-    # Required permissions for API Tokens are dns:write and domain:write (for DNSSEC).
+    # Required permissions for API Tokens are dns:read and dns:write.
     token: env/INFOMANIAK_TOKEN
 ```
 <!-- template:begin:dev -->
