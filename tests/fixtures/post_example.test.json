@@ -1,12 +1,12 @@
 [
   {
-    "source": ".",
+    "source": "",
     "type": "NS",
     "ttl": 3600,
     "target": "ns1.example2.test."
   },
   {
-    "source": ".",
+    "source": "",
     "type": "NS",
     "ttl": 3600,
     "target": "ns2.example2.test."
@@ -24,19 +24,19 @@
     "target": "2001:db8::3"
   },
   {
-    "source": ".",
+    "source": "",
     "type": "CAA",
     "ttl": 3600,
     "target": "0 issue \"sectigo.com\""
   },
   {
-    "source": ".",
+    "source": "",
     "type": "CAA",
     "ttl": 3600,
     "target": "1 issuewild \"letsencrypt.org\""
   },
   {
-    "source": ".",
+    "source": "",
     "type": "CAA",
     "ttl": 3600,
     "target": "2 iodef \"mailto:security@example.test\""

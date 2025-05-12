@@ -1,12 +1,12 @@
 [
   {
-    "source": ".",
+    "source": "",
     "type": "NS",
     "ttl": 3600,
     "target": "ns1.example2.test."
   },
   {
-    "source": ".",
+    "source": "",
     "type": "NS",
     "ttl": 3600,
     "target": "ns3.example2.test."
