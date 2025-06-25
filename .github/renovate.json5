@@ -12,7 +12,6 @@
     ":semanticCommits",
     ":timezone(Europe/Paris)",
     "github>m0nsterrr/octodns-infomaniak//.github/renovate/labels.json5",
-    "github>m0nsterrr/octodns-infomaniak//.github/renovate/semantic_commits.json5",
     "github>m0nsterrr/octodns-infomaniak//.github/renovate/devcontainers.json5",
   ],
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",

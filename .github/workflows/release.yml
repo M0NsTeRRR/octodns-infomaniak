@@ -45,7 +45,7 @@ jobs:
           persist-credentials: false
 
       - name: Create release as draft
-        run: gh release create ${GITHUB_REF_NAME} -n "${RELEASE_BODY}" --draft
+        run: gh release create ${GITHUB_REF_NAME}  -t "Release ${GITHUB_REF_NAME}" -n "${RELEASE_BODY}" --draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_BODY: ${{ needs.changelog.outputs.release_body }}
@@ -72,11 +72,11 @@ jobs:
           python-version-file: ".python-version"
 
       - name: Install the project
-        run: uv sync --all-extras
+        run: uv sync --all-extras --frozen
 
-      - name: Build package
+      - name: Build the project
         run: |
-          uv version "${GITHUB_REF#refs/*/}"
+          uv version "${GITHUB_REF#refs/*/}" --frozen
           uv build
 
       - name: Upload artifacts
@@ -99,7 +99,8 @@ jobs:
           path: dist/
 
       - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4 
+
 
   publish-release:
     name: Publish release

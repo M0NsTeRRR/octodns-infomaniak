@@ -27,7 +27,7 @@ jobs:
           python-version-file: ".python-version"
 
       - name: Install the project
-        run: uv sync --all-extras
+        run: uv sync --all-extras --frozen
 
       - name: Run ruff format
         run: uv run ruff format --check .

@@ -6,6 +6,14 @@
       "addLabels": ["renovate/pip"]
     },
     {
+      "matchDatasources": ["github-tags"],
+      "addLabels": ["renovate/github-tags"]
+    },
+    {
+      "matchDatasources": ["github-releases"],
+      "addLabels": ["renovate/github-releases"]
+    },
+    {
       "matchUpdateTypes": ["major"],
       "labels": ["type/major"]
     },
