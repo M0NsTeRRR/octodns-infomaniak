@@ -8,7 +8,7 @@
 # See documentation for more information on available options.
 
 [changelog]
-# template for the changelog footer
+# template for the changelog header
 header = ""
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
