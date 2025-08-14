@@ -6,7 +6,7 @@ labels: '🚀 enhancement'
 assignees: ''
 ---
 
-<!-- Please only use this template for submitting enhancement requests.  -->
+<!-- Please only use this template for submitting enhancement requests. -->
 
 **What would you like to be added**:
 
