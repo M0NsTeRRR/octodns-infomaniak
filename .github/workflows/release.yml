@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate a changelog
         id: git-cliff
-        uses: orhun/git-cliff-action@4a4a951bc43fafe41cd2348d181853f52356bee7 # v4.4.2
+        uses: orhun/git-cliff-action@98c93442bb05a455a77bee982867857ae748eeea # v4.5.1
         with:
           config: .github/cliff.toml
           args: -vv --current
@@ -72,11 +72,11 @@ jobs:
           python-version-file: ".python-version"
 
       - name: Install the project
-        run: uv sync --all-extras --frozen
+        run: uv sync --all-extras
 
       - name: Build the project
         run: |
-          uv version "${GITHUB_REF#refs/*/}" --frozen
+          uv version "${GITHUB_REF#refs/*/}"
           uv build
 
       - name: Upload artifacts
@@ -84,6 +84,7 @@ jobs:
         with:
           name: artifacts
           path: dist/
+          if-no-files-found: error
 
   publish-package:
     name: Publish package
@@ -93,13 +94,13 @@ jobs:
     needs: [build-package]
     steps:
       - name: Downloads artifacts
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
         with:
           name: artifacts
           path: dist/
 
       - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4 
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
 
 
   publish-release:
