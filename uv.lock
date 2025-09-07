@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.9, <4.0.0"
 
 [[package]]
@@ -270,7 +270,7 @@ dev = [
 requires-dist = [
     { name = "octodns", specifier = ">=1.10.0,<2.0.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = "~=8.4.0" },
-    { name = "pytest-cov", marker = "extra == 'dev'", specifier = "~=6.2.0" },
+    { name = "pytest-cov", marker = "extra == 'dev'", specifier = "~=6.3.0" },
     { name = "requests", specifier = ">=2.32.0" },
     { name = "responses", marker = "extra == 'dev'", specifier = "~=0.25.3" },
     { name = "ruff", marker = "extra == 'dev'", specifier = "~=0.12.0" },
@@ -324,15 +324,16 @@ wheels = [
 
 [[package]]
 name = "pytest-cov"
-version = "6.2.0"
+version = "6.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "coverage", extra = ["toml"] },
+    { name = "pluggy" },
     { name = "pytest" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/88/17/139b134cb36e496a62780b2ff19ea47fd834f2d180a32e6dd9210f4a8a77/pytest_cov-6.2.0.tar.gz", hash = "sha256:9a4331e087a0f5074dc1e19fe0485a07a462b346cbb91e2ac903ec5504abce10", size = 68872, upload-time = "2025-06-11T21:55:02.68Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/4c/f883ab8f0daad69f47efdf95f55a66b51a8b939c430dadce0611508d9e99/pytest_cov-6.3.0.tar.gz", hash = "sha256:35c580e7800f87ce892e687461166e1ac2bcb8fb9e13aea79032518d6e503ff2", size = 70398, upload-time = "2025-09-06T15:40:14.361Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/aa/66/a38138fbf711b2b93592dfd7303bba561f6bc05f85361a0388c105ceb727/pytest_cov-6.2.0-py3-none-any.whl", hash = "sha256:bd19301caf600ead1169db089ed0ad7b8f2b962214330a696b8c85a0b497b2ff", size = 24448, upload-time = "2025-06-11T21:55:00.938Z" },
+    { url = "https://files.pythonhosted.org/packages/80/b4/bb7263e12aade3842b938bc5c6958cae79c5ee18992f9b9349019579da0f/pytest_cov-6.3.0-py3-none-any.whl", hash = "sha256:440db28156d2468cafc0415b4f8e50856a0d11faefa38f30906048fe490f1749", size = 25115, upload-time = "2025-09-06T15:40:12.44Z" },
 ]
 
 [[package]]
