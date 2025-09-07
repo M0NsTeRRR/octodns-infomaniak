@@ -28,7 +28,10 @@ _Infomaniak provider for octoDNS_
 ## 🔗 Table of Contents
 
 - [Usage](#-usage)
+    - [Pypi](#-pypi)
 - [Dev](#%EF%B8%8F-dev)
+    - [Run linter and formatter](#run-linter-and-formatter)
+    - [Run test](#run-test)
 - [Support &amp; Assistance](#%EF%B8%8F-support--assistance)
 - [Contributing](#-contributing)
 - [Security](#%EF%B8%8F-security)
