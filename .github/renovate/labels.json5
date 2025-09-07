@@ -1,9 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "matchDatasources": ["pypi"],
-      "addLabels": ["renovate/pip"]
+      "addLabels": ["renovate/python"]
     },
     {
       "matchDatasources": ["github-tags"],
