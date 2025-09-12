@@ -39,7 +39,6 @@ _Infomaniak provider for octoDNS_
 
 
 
-
 <!-- template:begin:usage/title -->
 ## 🪐 Usage
 <!-- template:end:usage/title -->
