@@ -20,7 +20,9 @@ _Infomaniak provider for octoDNS_
 [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/m0nsterrr/octodns-infomaniak?label=openssf%20scorecard&style=for-the-badge)](https://scorecard.dev/viewer/?uri=github.com/m0nsterrr/octodns-infomaniak)
 
 </div>
-<!-- template:end:header --><!-- template:begin:table_of_content -->
+<!-- template:end:header -->
+
+<!-- template:begin:table_of_content -->
 ## 🔗 Table of Contents
 - [Usage](#-usage)
     - [Configuration](#-configuration)
@@ -34,18 +36,6 @@ _Infomaniak provider for octoDNS_
 - [License](#%EF%B8%8F-license)
 <!-- template:end:table_of_content -->
 
-<!-- template:begin:usage/title -->
-## 🪐 Usage
-<!-- template:end:usage/title -->
-
-<!-- template:begin:usage/configuration -->
-## 📜 Configuration
-<!-- template:end:usage/configuration -->
-
-<!-- template:begin:usage/pypi -->
-### 🐍 Pypi
-Install the package `pip install octodns-infomaniak`.
-<!-- template:end:usage/pypi -->
 
 <!-- template:begin:dev -->
 ## 🛠️ Dev
