@@ -25,8 +25,8 @@ _Infomaniak provider for octoDNS_
 <!-- template:begin:table_of_content -->
 ## 🔗 Table of Contents
 - [Usage](#-usage)
-    - [Configuration](#-configuration)
     - [Pypi](#-pypi)
+- [Configuration](#-configuration)
 - [Dev](#%EF%B8%8F-dev)
     - [Run linter and formatter](#run-linter-and-formatter)
     - [Run test](#run-test)
@@ -34,12 +34,41 @@ _Infomaniak provider for octoDNS_
 - [Contributing](#-contributing)
 - [Security](#%EF%B8%8F-security)
 - [License](#%EF%B8%8F-license)
-<!-- template:end:table_of_content --><!-- template:begin:documentation -->
+<!-- template:end:table_of_content -->
+<!-- template:begin:usage/title -->
+## 🪐 Usage
+<!-- template:end:usage/title -->
+<!-- template:begin:usage/pypi -->
+### 🐍 Pypi
+Install the package `pip install octodns-infomaniak`.
+<!-- template:end:usage/pypi -->
 
-## 📖 Documentation
+<!-- template:begin:configuration -->
+## 📜 Configuration
+<!-- template:end:configuration -->
 
-See None.
-<!-- template:end:documentation -->
+<!-- template:begin:dev -->
+## 🛠️ Dev
+
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/).
+
+Install python and setup dependencies with `uv sync --all-extras`.
+### Run linter and formatter
+
+```
+uv run ruff format .
+uv run ruff check .
+```
+
+### Run test
+
+```
+uv run pytest --cov
+```
+### Devcontainer
+
+A dev container is available; the documentation can be found on how to use it [here](https://code.visualstudio.com/docs/devcontainers/containers).
+<!-- template:end:dev -->
 
 <!-- template:begin:support -->
 ## 🙋‍♂️ Support & Assistance
