@@ -51,7 +51,6 @@ _Infomaniak provider for octoDNS_
 Install the package `pip install octodns-infomaniak`.
 <!-- template:end:usage/pypi -->
 
-
 <!-- template:begin:dev -->
 ## 🛠️ Dev
 
