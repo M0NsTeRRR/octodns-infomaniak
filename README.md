@@ -34,31 +34,12 @@ _Infomaniak provider for octoDNS_
 - [Contributing](#-contributing)
 - [Security](#%EF%B8%8F-security)
 - [License](#%EF%B8%8F-license)
-<!-- template:end:table_of_content -->
+<!-- template:end:table_of_content --><!-- template:begin:documentation -->
 
+## 📖 Documentation
 
-<!-- template:begin:dev -->
-## 🛠️ Dev
-
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/).
-
-Install python and setup dependencies with `uv sync --all-extras`.
-### Run linter and formatter
-
-```
-uv run ruff format .
-uv run ruff check .
-```
-
-### Run test
-
-```
-uv run pytest --cov
-```
-### Devcontainer
-
-A dev container is available; the documentation can be found on how to use it [here](https://code.visualstudio.com/docs/devcontainers/containers).
-<!-- template:end:dev -->
+See None.
+<!-- template:end:documentation -->
 
 <!-- template:begin:support -->
 ## 🙋‍♂️ Support & Assistance
