@@ -24,7 +24,6 @@ _Infomaniak provider for octoDNS_
 
 <!-- template:begin:table_of_content -->
 ## 🔗 Table of Contents
-
 - [Usage](#-usage)
     - [Configuration](#-configuration)
     - [Pypi](#-pypi)
@@ -41,17 +40,19 @@ _Infomaniak provider for octoDNS_
 
 
 
-<!-- template:begin:usage-title -->
+<!-- template:begin:usage/title -->
 ## 🪐 Usage
-<!-- template:end:usage-title -->
+<!-- template:end:usage/title -->
 
-<!-- template:begin:usage-configuration -->
+
+<!-- template:begin:usage/configuration -->
 ## 📜 Configuration
-<!-- template:end:usage-configuration -->
-<!-- template:begin:usage-pypi -->
+<!-- template:end:usage/configuration -->
+
+<!-- template:begin:usage/pypi -->
 ### 🐍 Pypi
 Install the package `pip install octodns-infomaniak`.
-<!-- template:end:usage-pypi -->
+<!-- template:end:usage/pypi -->
 
 
 <!-- template:begin:dev -->
