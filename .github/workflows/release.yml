@@ -7,10 +7,13 @@ on:
     tags:
       - "*"
 permissions: {}
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   changelog:
     name: Generate changelog
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     outputs:
@@ -24,7 +27,7 @@ jobs:
 
       - name: Generate a changelog
         id: git-cliff
-        uses: orhun/git-cliff-action@98c93442bb05a455a77bee982867857ae748eeea # v4.5.1
+        uses: orhun/git-cliff-action@d77b37db2e3f7398432d34b72a12aa3e2ba87e51 # v4.6.0
         with:
           config: .github/cliff.toml
           args: -vv --current
@@ -34,7 +37,7 @@ jobs:
 
   create-draft-release:
     name: Create release as draft
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     needs: [changelog]
@@ -52,7 +55,7 @@ jobs:
 
   build-package:
     name: Build package
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     steps:
@@ -62,7 +65,7 @@ jobs:
           persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@557e51de59eb14aaaba2ed9621916900a91d50c6 # v6.6.1
+        uses: astral-sh/setup-uv@b75a909f75acd358c2196fb9a5f1299a9a8868a4 # v6.7.0
         with:
           enable-cache: false
 
@@ -89,7 +92,7 @@ jobs:
 
   publish-package:
     name: Publish package
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       id-token: write # needed for signing the images with GitHub OIDC Token
     needs: [build-package]
@@ -105,7 +108,7 @@ jobs:
 
   publish-release:
     name: Publish release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     needs: [create-draft-release, publish-package]

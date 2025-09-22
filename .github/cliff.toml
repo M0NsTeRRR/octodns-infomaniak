@@ -54,14 +54,14 @@ body = """
 {%- set print_new_contributor_title = true -%}
 {% for contributor in first_time_contributors %}
   {% if contributor.username not in excluded_users %}
-  {% if print_new_contributor_title %}
-    {%- set print_new_contributor_title = false -%}
-    ## New Contributors ❤️
-  {% endif %}\
-  * @{{ contributor.username }} made their first contribution
-    {%- if contributor.pr_number %} in \
-      [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }}) \
-    {%- endif %}
+    {% if print_new_contributor_title %}
+      {%- set print_new_contributor_title = false -%}
+      ## New Contributors ❤️
+    {% endif %}\
+    * @{{ contributor.username }} made their first contribution
+      {%- if contributor.pr_number %} in \
+        [#{{ contributor.pr_number }}]({{ self::remote_url() }}/pull/{{ contributor.pr_number }}) \
+      {%- endif %}
   {%- endif %}
 {%- endfor -%}
 {%- endif %}
