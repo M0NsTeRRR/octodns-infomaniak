@@ -1,0 +1,27 @@
+---
+# THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Close stale issues and PRs
+on:
+  schedule:
+    - cron: "0 7 * * *"
+permissions: {}
+concurrency:
+  group: close-stale-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  stale:
+    name: Close stale issues and PRs
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/stale@3a9db7e6a41a89f618792c92c0e97cc736e1b13f # v10.0.0
+        with:
+          any-of-labels: "⌛ pending author's response"
+          days-before-stale: 30
+          days-before-close: 30
+          stale-issue-label: "⏰ stale"
+          stale-pr-label: "⏰ stale"
