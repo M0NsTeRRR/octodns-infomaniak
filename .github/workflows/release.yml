@@ -48,7 +48,12 @@ jobs:
           persist-credentials: false
 
       - name: Create release as draft
-        run: gh release create ${GITHUB_REF_NAME}  -t "Release ${GITHUB_REF_NAME}" -n "${RELEASE_BODY}" --draft
+        run: |
+          if [[ "$GITHUB_REF_NAME" =~ (alpha|beta|rc) ]]; then
+            gh release create ${GITHUB_REF_NAME}  -t "Release ${GITHUB_REF_NAME}" -n "${RELEASE_BODY}" --draft --prerelease
+          else
+            gh release create ${GITHUB_REF_NAME}  -t "Release ${GITHUB_REF_NAME}" -n "${RELEASE_BODY}" --draft
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_BODY: ${{ needs.changelog.outputs.release_body }}
