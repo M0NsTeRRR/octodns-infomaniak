@@ -1,7 +1,7 @@
 ---
 # THIS FILE IS GENERATED! DO NOT EDIT! Maintained by Pulumi
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: Release
+Nonename: Release
 on:
   push:
     tags:
@@ -111,7 +111,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
-    needs: [create-draft-release, publish-package]
+    needs: [publish-package]
     steps:
       - name: Checkout code
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
