@@ -6,11 +6,10 @@
 ## Description
 
 <!--- Describe your changes in detail -->
-
-## Motivation and Context
-
 <!--- Why is this change required? What problem does it solve? -->
 <!--- If it fixes an open issue, please link to the issue here. -->
+
+- Fixes #XXXX
 
 ## How Has This Been Tested?
 
@@ -41,9 +40,9 @@
 - [ ] I have added tests to cover my changes.
 - [ ] All new and existing tests passed.
 
+<!--- Thank you for keeping this note for the community --->
 ### Community Note
 
 - Please vote on this pull request by adding a 👍 [reaction](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to the original pull request comment to help the community and maintainers prioritize this request
 - Please do not leave "+1" or other comments that do not add relevant new information or questions, they generate extra noise for pull request followers and do not help prioritize the request
-<!--- Thank you for keeping this note for the community --->
 <!--- Thank you for contributing to {'octodns-infomaniak'}! 🚀  -->

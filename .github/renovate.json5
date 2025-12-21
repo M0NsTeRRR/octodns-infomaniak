@@ -17,6 +17,7 @@
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
+  "minimumReleaseAge": "3 days",
   "labels": [
     "dependencies",
   ]
