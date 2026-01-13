@@ -6,8 +6,6 @@ on:
   pull_request_target:
     types: [labeled, unlabeled, reopened]
 permissions: {}
-env:
-  AI_LABEL: "🤖 ai-generated"
 jobs:
   ai-generated-support:
     if: github.event.label.name == env.AI_LABEL || github.event.action == 'reopened'
@@ -22,6 +20,7 @@ jobs:
       GH_REPO: ${{ github.repository }}
       NUMBER: ${{ github.event.pull_request.number }}
       PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+      AI_LABEL: "🤖 ai-generated"
     steps:
       - name: Label added, comment and close pull request
         if: github.event.action == 'labeled' && github.event.label.name == env.AI_LABEL
