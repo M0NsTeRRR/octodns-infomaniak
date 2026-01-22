@@ -9,7 +9,7 @@ permissions: {}
 jobs:
   ai-generated-support:
     if: github.event.label.name == '🤖 ai-generated' || github.event.action == 'reopened'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-slim
     concurrency:
       group: ai-generated-${{ github.event.pull_request.number }}
       cancel-in-progress: true
