@@ -10,10 +10,10 @@ end_of_line = lf
 indent_size = 2
 indent_style = space
 insert_final_newline = true
-
 # Python
 [*.py]
 indent_size = 4
+
 
 # JSON
 [*.json]
@@ -28,3 +28,4 @@ indent_size = 2
 [*.md]
 indent_size = 4
 trim_trailing_whitespace = false
+
