@@ -48,14 +48,6 @@ Install the package `pip install octodns-infomaniak`.
 <!-- template:begin:configuration -->
 ## 📜 Configuration
 <!-- template:end:configuration -->
-```yaml
-providers:
-  infomaniak:
-    class: octodns_infomaniak.InfomaniakProvider
-    # The API Token or API Key.
-    # Required permissions for API Tokens are dns:read and dns:write.
-    token: env/INFOMANIAK_TOKEN
-```
 
 <!-- template:begin:dev -->
 ## 🛠️ Dev
