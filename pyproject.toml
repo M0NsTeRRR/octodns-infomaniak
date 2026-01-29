@@ -27,7 +27,7 @@ Repository = "https://github.com/M0NsTeRRR/octodns-infomaniak"
 Issues = "https://github.com/M0NsTeRRR/octodns-infomaniak/issues"
 Funding = "https://ko-fi.com/ludovicortega"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
   "pytest~=9.0.2",
   "pytest-cov~=7.0.0",
