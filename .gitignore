@@ -33,3 +33,5 @@ cover/
 
 # mkdocs documentation
 /site
+### Helm
+*.tgz
