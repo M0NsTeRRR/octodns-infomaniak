@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
+    "config:best-practices",
     "docker:enableMajor",
     "replacements:k8s-registry-move",
     ":automergePr",
@@ -11,6 +11,7 @@
     ":dependencyDashboard",
     ":semanticCommits",
     ":timezone(Europe/Paris)",
+    "github>m0nsterrr/octodns-infomaniak//.github/renovate/ignore_files.json5",
     "github>m0nsterrr/octodns-infomaniak//.github/renovate/labels.json5",
     "github>m0nsterrr/octodns-infomaniak//.github/renovate/devcontainer.json5",
   ],

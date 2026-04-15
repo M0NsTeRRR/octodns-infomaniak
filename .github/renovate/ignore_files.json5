@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "ignorePaths": [
+    ".github/workflows/ai-generated.yml",
+    ".github/workflows/automation-sync-pr.yml",
+    ".github/workflows/ci.yml",
+    ".github/workflows/codeql.yml",
+    ".github/workflows/dependency-review.yml",
+    ".github/workflows/release.yml",
+    ".github/workflows/scorecard.yml",
+    ".github/workflows/stale.yml",
+    ".github/workflows/validate-pr-title.yml",
+  ]
+}
