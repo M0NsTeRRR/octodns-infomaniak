@@ -1,0 +1,9 @@
+[lint]
+select = [
+  "E",   # pycodestyle errors
+  "F",   # pyflakes
+  "I",   # isort
+  "W",   # pycodestyle warnings
+  "RUF",  # ruff
+]
+ignore = ["E501"]

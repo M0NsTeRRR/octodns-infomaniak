@@ -1,19 +1,19 @@
-from importlib.metadata import version
 import json
+from importlib.metadata import version
 
 import pytest
 import responses
-from responses import matchers
-from octodns.zone import Zone
 from octodns.record import Record
+from octodns.zone import Zone
+from responses import matchers
 
 from octodns_infomaniak import (
     BASE_API_URL,
-    InfomaniakProvider,
     InfomaniakClientBadRequest,
-    InfomaniakClientUnauthorized,
     InfomaniakClientForbidden,
     InfomaniakClientNotFound,
+    InfomaniakClientUnauthorized,
+    InfomaniakProvider,
 )
 
 TOKEN = "token"

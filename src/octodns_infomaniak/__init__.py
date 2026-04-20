@@ -1,13 +1,13 @@
-from typing import Any, Union, Iterator
-from importlib.metadata import version
 import logging
 from collections import defaultdict
+from importlib.metadata import version
+from typing import Any, Iterator, Union
 
-from requests import Session
-from octodns.zone import Zone
+from octodns.provider import ProviderException
+from octodns.provider.base import BaseProvider, Plan
 from octodns.record import (
-    ARecord,
     AaaaRecord,
+    ARecord,
     CaaRecord,
     Change,
     CnameRecord,
@@ -20,9 +20,8 @@ from octodns.record import (
     TlsaRecord,
     TxtRecord,
 )
-from octodns.provider import ProviderException
-from octodns.provider.base import BaseProvider, Plan
-
+from octodns.zone import Zone
+from requests import Session
 
 BASE_API_URL = "https://api.infomaniak.com/2/"
 
@@ -101,20 +100,18 @@ class InfomaniakProvider(BaseProvider):
     SUPPORTS_GEO = False
     SUPPORTS_ROOT_NS = True
     SUPPORTS_POOL_VALUE_STATUS = False
-    SUPPORTS = set(
-        (
-            "A",
-            "AAAA",
-            "CAA",
-            "CNAME",
-            "DS",
-            "MX",
-            "NS",
-            "SRV",
-            "SSHFP",
-            "TLSA",
-            "TXT",
-        )
+    SUPPORTS = (
+        "A",
+        "AAAA",
+        "CAA",
+        "CNAME",
+        "DS",
+        "MX",
+        "NS",
+        "SRV",
+        "SSHFP",
+        "TLSA",
+        "TXT",
     )
 
     def __init__(self, id: str, token: str, *args, **kwargs):
