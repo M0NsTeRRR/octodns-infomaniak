@@ -3,18 +3,18 @@ name = "octodns-infomaniak"
 version = "0.0.0"
 description = "Infomaniak provider for octoDNS"
 readme = "README.md"
-authors = [{ name = "Ludovic Ortega", email = "ludovic.ortega@adminafk.fr" }]
-keywords = ["dns", "octodns", "infomaniak"]
 license = "CECILL-2.1"
 license-files = ["LICENSE*"]
+authors = [{ name = "Ludovic Ortega", email = "ludovic.ortega@adminafk.fr" }]
+keywords = ["dns", "infomaniak", "octodns"]
 classifiers = [
+  "Operating System :: OS Independent",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
-  "Operating System :: OS Independent",
   "Topic :: Utilities",
 ]
 
@@ -22,10 +22,10 @@ requires-python = ">=3.10,<4.0.0"
 dependencies = ["octodns>=1.10.0,<2.0.0", "requests>=2.32.0"]
 
 [project.urls]
-Homepage = "https://github.com/M0NsTeRRR/octodns-infomaniak"
-Repository = "https://github.com/M0NsTeRRR/octodns-infomaniak"
-Issues = "https://github.com/M0NsTeRRR/octodns-infomaniak/issues"
 Funding = "https://ko-fi.com/ludovicortega"
+Homepage = "https://github.com/M0NsTeRRR/octodns-infomaniak"
+Issues = "https://github.com/M0NsTeRRR/octodns-infomaniak/issues"
+Repository = "https://github.com/M0NsTeRRR/octodns-infomaniak"
 
 [dependency-groups]
 dev = [
@@ -38,3 +38,7 @@ dev = [
 [build-system]
 requires = ["uv_build>=0.11.0,<0.12.0"]
 build-backend = "uv_build"
+
+[tool.pytest]
+addopts = ["--cov"]
+filterwarnings = ["error"]
