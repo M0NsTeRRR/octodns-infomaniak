@@ -1,7 +1,7 @@
 import logging
 from collections import defaultdict
 from importlib.metadata import version
-from typing import Any, Iterator, Union
+from typing import Any, Iterator
 
 from octodns.provider import ProviderException
 from octodns.provider.base import BaseProvider, Plan
@@ -201,7 +201,7 @@ class InfomaniakProvider(BaseProvider):
 
     def _data_for_CAA(
         self, _type: str, records: list[dict[str, str]]
-    ) -> dict[str, Union[str, int, list]]:
+    ) -> dict[str, str | int | list]:
         values = []
         for record in records:
             flags, tag, value = record["target"].split(" ", 2)
@@ -306,7 +306,7 @@ class InfomaniakProvider(BaseProvider):
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
     def _params_for_multiple(
-        self, record: Union[ARecord, AaaaRecord, NsRecord, TxtRecord]
+        self, record: ARecord | AaaaRecord | NsRecord | TxtRecord
     ) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
