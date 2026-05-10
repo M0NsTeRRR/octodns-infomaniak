@@ -97,7 +97,7 @@ jobs:
 
   publish-package:
     name: Publish package
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-24.04
     permissions:
       id-token: write # needed for signing the images with GitHub OIDC Token
     needs: [build-package]
