@@ -75,9 +75,9 @@ uv run ruff check .
 ```
 uv run pytest --cov
 ```
-### Devcontainer
+### devenv
 
-A dev container is available; the documentation can be found on how to use it [here](https://code.visualstudio.com/docs/devcontainers/containers).
+A devenv is available; the documentation can be found on how to use it [here](https://devenv.sh/getting-started/).
 <!-- template:end:dev -->
 
 <!-- template:begin:support -->
