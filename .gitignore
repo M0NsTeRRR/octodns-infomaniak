@@ -32,9 +32,7 @@ coverage.xml
 cover/
 
 # mkdocs documentation
-/site
-
-# Devenv
+/site# Devenv
 .devenv*
 devenv.local.nix
 devenv.local.yaml
