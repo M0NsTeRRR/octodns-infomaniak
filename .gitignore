@@ -33,6 +33,8 @@ cover/
 
 # mkdocs documentation
 /site
+
+
 # Devenv
 .devenv*
 devenv.local.nix
