@@ -4,6 +4,7 @@
     "config:best-practices",
     "docker:enableMajor",
     "replacements:k8s-registry-move",
+    ":enableVulnerabilityAlerts",
     ":automergePr",
     ":automergePatch",
     ":automergeDigest",
