@@ -29,7 +29,7 @@ Repository = "https://github.com/M0NsTeRRR/octodns-infomaniak"
 
 [dependency-groups]
 dev = [
-  "pytest~=9.0.2",
+  "pytest~=9.1.1",
   "pytest-cov~=7.1.0",
   "responses~=0.26.0",
   "ruff~=0.15.7",
