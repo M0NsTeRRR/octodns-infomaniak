@@ -15,30 +15,32 @@ jobs:
     permissions:
       contents: read
     steps:
-      - name: Checkout code
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+      - parallel:
+        - name: Checkout code
+          uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+          with:
+            persist-credentials: false
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        - name: Install uv
+          uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
 
       - name: Set up Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version-file: ".python-version"
 
       - name: Install the project
         run: uv sync --all-extras
 
-      - name: Run ruff format
-        run: uv run ruff format --check .
+      - parallel:
+        - name: Run ruff format
+          run: uv run ruff format --check .
 
-      - name: Run ruff check
-        run: uv run ruff check --output-format=github .
+        - name: Run ruff check
+          run: uv run ruff check --output-format=github .
 
-      - name: Run ruff uv lock check
-        run: uv lock --check
+        - name: Run ruff uv lock check
+          run: uv lock --check
 
   test:
     name: Test
@@ -53,17 +55,22 @@ jobs:
           - "3.12"
           - "3.13"
           - "3.14"
+    env:
+      UV_PYTHON: ${{ matrix.python-version }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
+      - parallel:
+        - name: Checkout code
+          uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+          with:
+            persist-credentials: false
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        - name: Install uv
+          uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
 
-      - name: Set up Python ${{ matrix.python-version }}
-        run: uv python install ${{ matrix.python-version }}
+        - name: Set up Python
+          uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+          with:
+            python-version: ${{ matrix.python-version }}
 
       - name: Install the project
         run: uv sync --all-extras
