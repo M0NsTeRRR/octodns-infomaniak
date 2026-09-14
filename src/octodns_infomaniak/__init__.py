@@ -131,6 +131,30 @@ class InfomaniakProvider(BaseProvider):
     def _get_record_name(self, record_name: str) -> str:
         return record_name if record_name else "."
 
+    def _unquote_txt(self, target: str) -> str:
+        """
+        Handle values over 255 bytes as they come back split into several quoted chunks
+        """
+        if not target.startswith('"'):
+            return target
+
+        result = []
+        in_quotes = False
+        escaped = False
+
+        for ch in target:
+            if escaped:
+                result.append(ch)
+                escaped = False
+            elif ch == "\\" and in_quotes:
+                escaped = True
+            elif ch == '"':
+                in_quotes = not in_quotes
+            elif in_quotes:
+                result.append(ch)
+
+        return "".join(result)
+
     def populate(self, zone: Zone, target: bool = False, lenient: bool = False) -> bool:
         self.log.debug(
             "populate: name=%s, target=%s, lenient=%s",
@@ -306,7 +330,7 @@ class InfomaniakProvider(BaseProvider):
         return {"ttl": records[0]["ttl"], "type": _type, "values": values}
 
     def _params_for_multiple(
-        self, record: ARecord | AaaaRecord | NsRecord | TxtRecord
+        self, record: ARecord | AaaaRecord | NsRecord
     ) -> Iterator[dict[str, Any]]:
         for value in record.values:
             yield {
@@ -319,7 +343,6 @@ class InfomaniakProvider(BaseProvider):
     _params_for_A = _params_for_multiple
     _params_for_AAAA = _params_for_multiple
     _params_for_NS = _params_for_multiple
-    _params_for_TXT = _params_for_multiple
 
     def _params_for_CAA(self, record: CaaRecord) -> Iterator[dict[str, Any]]:
         for value in record.values:
@@ -379,6 +402,15 @@ class InfomaniakProvider(BaseProvider):
             yield {
                 "source": self._get_record_name(record.name),
                 "target": f"{value.certificate_usage} {value.selector} {value.matching_type} {value.certificate_association_data}",
+                "ttl": record.ttl,
+                "type": record._type,
+            }
+
+    def _params_for_TXT(self, record: TxtRecord) -> Iterator[dict[str, Any]]:
+        for value in record.values:
+            yield {
+                "source": self._get_record_name(record.name),
+                "target": self._unquote_txt(value).replace("\\;", ";"),
                 "ttl": record.ttl,
                 "type": record._type,
             }
