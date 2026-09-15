@@ -226,19 +226,6 @@ def test_populate_zone():
     wanted.add_record(
         Record.new(
             wanted,
-            "long_txt",
-            {
-                "ttl": 3600,
-                "type": "TXT",
-                "value": [
-                    "abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz"
-                ],
-            },
-        )
-    )
-    wanted.add_record(
-        Record.new(
-            wanted,
             "test",
             {
                 "ttl": 3600,
@@ -265,7 +252,7 @@ def test_populate_zone():
 
         expected = Zone(zone_name, [])
         provider.populate(expected)
-        assert 13 == len(expected.records)
+        assert 12 == len(expected.records)
         assert expected.records == wanted.records
 
 

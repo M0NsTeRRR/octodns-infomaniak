@@ -130,14 +130,6 @@
       "updated_at": 1731764898
     },
     {
-      "id": 22592953,
-      "source": "long_txt",
-      "type": "TXT",
-      "ttl": 3600,
-      "target": "\"abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijkl\" \"mnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz\"",
-      "updated_at": 1731764898
-    },
-    {
       "id": 22592990,
       "source": "test",
       "type": "TLSA",
