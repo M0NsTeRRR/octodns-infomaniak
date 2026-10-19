@@ -32,7 +32,7 @@ jobs:
             git push origin HEAD:automation-sync
           fi
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   create-pull-request:
     name: Create Pull Request
