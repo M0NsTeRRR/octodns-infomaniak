@@ -11,16 +11,41 @@ concurrency:
   group: automation-sync-pr-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  sync-actions-lock:
+    name: Sync actions.lock
+    runs-on: ubuntu-slim
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7.0.1
+
+      - name: Sync actions.lock
+        run: |
+          gh extension install github/gh-actions-lock --pin v0.2.0 --force
+          gh actions-lock --no-interactive --no-migrate-local-actions
+          if [ -n "$(git status --porcelain .github/workflows)" ]; then
+            git config user.name "Ludovic Ortega"
+            git config user.email "ludovic.ortega@adminafk.fr"
+            git add .github/workflows
+            git commit -s -m "chore(git-sync): sync actions.lock"
+            git push origin HEAD:automation-sync
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   create-pull-request:
     name: Create Pull Request
+    needs: [sync-actions-lock]
     runs-on: ubuntu-slim
     permissions:
       contents: read
       pull-requests: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
+          ref: automation-sync
           persist-credentials: false
 
       - name: Check for differences with main
