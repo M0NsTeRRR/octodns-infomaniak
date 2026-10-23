@@ -71,12 +71,12 @@ jobs:
             persist-credentials: false
 
         - name: Install uv
-          uses: astral-sh/setup-uv@v10.3.0
+          uses: astral-sh/setup-uv@v10.3.2
           with:
             enable-cache: false
 
       - name: Set up Python
-        uses: actions/setup-python@v7.0.0
+        uses: actions/setup-python@v7.1.0
         with:
           python-version-file: ".python-version"
 
@@ -110,7 +110,7 @@ jobs:
           path: dist/
 
       - name: Publish package distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.14.2
+        uses: pypa/gh-action-pypi-publish@v1.14.3
 
   publish-release:
     name: Publish release
