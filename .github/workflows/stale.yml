@@ -12,7 +12,7 @@ concurrency:
 jobs:
   stale:
     name: Close stale issues and PRs
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-26.04-arm
     permissions:
       actions: write
       issues: write
