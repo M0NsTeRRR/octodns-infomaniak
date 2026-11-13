@@ -11,7 +11,7 @@ concurrency:
 jobs:
   dependency-review:
     name: Dependency review
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-26.04-arm
     permissions:
       contents: read
     steps:
