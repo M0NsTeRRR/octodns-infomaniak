@@ -13,7 +13,7 @@ concurrency:
 jobs:
   sync-actions-lock:
     name: Sync actions.lock
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-26.04-arm
     permissions:
       contents: write
     steps:
@@ -22,7 +22,7 @@ jobs:
 
       - name: Sync actions.lock
         run: |
-          gh extension install github/gh-actions-lock --pin v0.3.0 --force
+          gh extension install github/gh-actions-lock --pin v0.4.1 --force
           gh actions-lock --no-interactive --no-migrate-local-actions
           if [ -n "$(git status --porcelain .github/workflows)" ]; then
             git config user.name "Ludovic Ortega"
@@ -37,7 +37,7 @@ jobs:
   create-pull-request:
     name: Create Pull Request
     needs: [sync-actions-lock]
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-26.04-arm
     permissions:
       contents: read
       pull-requests: write
